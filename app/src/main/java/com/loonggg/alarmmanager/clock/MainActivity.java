@@ -18,9 +18,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView date_tv;
-    private TimePickerView pvTime;
-    private RelativeLayout repeat_rl, ring_rl;
+    private TextView date_tv;   //选择时间
+    private TimePickerView pvTime;    //追踪时间？
+    private RelativeLayout repeat_rl, ring_rl;//布局相关
     private TextView tv_repeat_value, tv_ring_value;
     private LinearLayout allLayout;
     private Button set_btn;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         allLayout = (LinearLayout) findViewById(R.id.all_layout);
         set_btn = (Button) findViewById(R.id.set_btn);
-        set_btn.setOnClickListener(this);
+        set_btn.setOnClickListener(this);   //类似xml中的onclick属性
         date_tv = (TextView) findViewById(R.id.date_tv);
         repeat_rl = (RelativeLayout) findViewById(R.id.repeat_rl);
         repeat_rl.setOnClickListener(this);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ring_rl.setOnClickListener(this);
         tv_repeat_value = (TextView) findViewById(R.id.tv_repeat_value);
         tv_ring_value = (TextView) findViewById(R.id.tv_ring_value);
-        pvTime = new TimePickerView(this, TimePickerView.Type.HOURS_MINS);
+        pvTime = new TimePickerView(this, TimePickerView.Type.HOURS_MINS); //对TPV类对象的实例，还需要看类的构造
         pvTime.setTime(new Date());
         pvTime.setCyclic(false);
         pvTime.setCancelable(true);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public static String getTime(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm"); //格式化
         return format.format(date);
     }
 

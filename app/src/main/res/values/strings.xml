@@ -10,4 +10,5 @@
     <string name="cycle_sure">确定</string>
     <string name="vibration">震动</string>
     <string name="ring">铃声</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

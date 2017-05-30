@@ -1,4 +1,5 @@
 # Android-AlarmManagerClock
+<<<<<<< HEAD
 设置闹钟的一个封装的比较全面的demo
 >前些时候，有人在我「非著名程序员」公众号的后台问我有没有设置闹钟的demo，我当时说承诺为大家写一个，一直没空，直到最近又有人跟我要，我决定抽时间写一个吧。确实设置闹钟是一个比较麻烦的东西。我在这里写的这个demo抽出来了封装了一个类库，大家直接调用其中的设置闹钟和取消闹钟的方法即可。可以设置每天的闹钟，周一到星期天之间多选的闹钟，也可以设置选择一次性闹钟，跟系统设置闹钟的方式基本差不多吧。
 
@@ -74,3 +75,5 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+=======
+>>>>>>> 63d1ca25079a54a63ebd97c2d60c42dcf14d5c94

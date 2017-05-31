@@ -19,7 +19,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView date_tv;   //选择时间
-    private TimePickerView pvTime;    //追踪时间？
+    private TimePickerView pvTime;    //*追踪时间？ TPV这个类中并不能编辑，我知道它是实现点击选择时间后出现的那个View
     private RelativeLayout repeat_rl, ring_rl;//布局相关
     private TextView tv_repeat_value, tv_ring_value;
     private LinearLayout allLayout;
@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ring_rl.setOnClickListener(this);
         tv_repeat_value = (TextView) findViewById(R.id.tv_repeat_value);
         tv_ring_value = (TextView) findViewById(R.id.tv_ring_value);
-        pvTime = new TimePickerView(this, TimePickerView.Type.HOURS_MINS); //对TPV类对象的实例，还需要看类的构造
+        pvTime = new TimePickerView(this, TimePickerView.Type.HOURS_MINS); //*对TPV类对象的实例，还需要看类的构造
         pvTime.setTime(new Date());
-        pvTime.setCyclic(false);
+        pvTime.setCyclic(false);   //*并不知道这是啥，不过感觉知不知道无所谓
         pvTime.setCancelable(true);
         //时间选择后回调
         pvTime.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onTimeSelect(Date date) {
                 time = getTime(date);
-                date_tv.setText(time);
+                date_tv.setText(time);      //*感觉这个是将选择的时间显示出来
             }
         });
 

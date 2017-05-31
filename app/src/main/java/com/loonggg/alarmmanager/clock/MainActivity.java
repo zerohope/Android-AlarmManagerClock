@@ -18,12 +18,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView date_tv;   //选择时间
-    private TimePickerView pvTime;    //*追踪时间？ TPV这个类中并不能编辑，我知道它是实现点击选择时间后出现的那个View
+    private TextView date_tv;   //显示选择的时间
+    private TimePickerView pvTime;    //*用于选择时间的View
     private RelativeLayout repeat_rl, ring_rl;//布局相关
-    private TextView tv_repeat_value, tv_ring_value;
+    private TextView tv_repeat_value, tv_ring_value; //重复与铃声所选中的值
     private LinearLayout allLayout;
-    private Button set_btn;
+    private Button set_btn; //确定按钮
     private String time;
     private int cycle;
     private int ring;
@@ -42,17 +42,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ring_rl.setOnClickListener(this);
         tv_repeat_value = (TextView) findViewById(R.id.tv_repeat_value);
         tv_ring_value = (TextView) findViewById(R.id.tv_ring_value);
-        pvTime = new TimePickerView(this, TimePickerView.Type.HOURS_MINS); //*对TPV类对象的实例，还需要看类的构造
+        pvTime = new TimePickerView(this, TimePickerView.Type.HOURS_MINS); //*对TPV类对象的实例化
         pvTime.setTime(new Date());
-        pvTime.setCyclic(false);   //*并不知道这是啥，不过感觉知不知道无所谓
-        pvTime.setCancelable(true);
+        pvTime.setCyclic(true);   //*设置选择时间的时候，是否循环滚动
+        pvTime.setCancelable(true); //用处？
         //时间选择后回调
         pvTime.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
 
             @Override
             public void onTimeSelect(Date date) {
                 time = getTime(date);
-                date_tv.setText(time);      //*感觉这个是将选择的时间显示出来
+                date_tv.setText(time);      //当设置完时间后，点击确定，调用这个方法？
             }
         });
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public static String getTime(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm"); //格式化
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm"); //格式化时间
         return format.format(date);
     }
 
@@ -87,12 +87,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void setClock() {
+    private void setClock() {  //AlarmManagerUtil这个类看的有点迷
         if (time != null && time.length() > 0) {
             String[] times = time.split(":");
             if (cycle == 0) {//是每天的闹钟
                 AlarmManagerUtil.setAlarm(this, 0, Integer.parseInt(times[0]), Integer.parseInt
-                        (times[1]), 0, 0, "闹钟响了", ring);
+                        (times[1]), 0, 0, "闹钟响了", ring); //
             } if(cycle == -1){//是只响一次的闹钟
                 AlarmManagerUtil.setAlarm(this, 1, Integer.parseInt(times[0]), Integer.parseInt
                         (times[1]), 0, 0, "闹钟响了", ring);
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void selectRemindCycle() {
+    public void selectRemindCycle() {   //显示选择日期的View
         final SelectRemindCyclePopup fp = new SelectRemindCyclePopup(this);
         fp.showPopup(allLayout);
         fp.setOnSelectRemindCyclePopupListener(new SelectRemindCyclePopup
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void selectRingWay() {
+    public void selectRingWay() {  //选择闹铃的方式
         SelectRemindWayPopup fp = new SelectRemindWayPopup(this);
         fp.showPopup(allLayout);
         fp.setOnSelectRemindWayPopupListener(new SelectRemindWayPopup
@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * @param flag   flag=0返回带有汉字的周一，周二cycle等，flag=1,返回weeks(1,2,3)
      * @return
      */
-    public static String parseRepeat(int repeat, int flag) {
+    public static String parseRepeat(int repeat, int flag) { //这是在干啥？？
         String cycle = "";
         String weeks = "";
         if (repeat == 0) {

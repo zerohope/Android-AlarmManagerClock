@@ -2,6 +2,15 @@
 <items version="2" >
 
     <item
+        is-multidex="true"
+        jar="G:\AS\sjTest\Android-AlarmManagerClock\app\libs\litepal-1.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="92d15a276333dfe6d833bcf6c05afa5ce7c06662">
+        <dex dex="G:\AS\sjTest\Android-AlarmManagerClock\app\build\intermediates\transforms\dex\debug\folders\1000\2\litepal-1.5.1_ec0f72f2141d6d3fd3fcc2cdd9ad3d86a39f0a6e\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\A\.android\build-cache\145509a9e5461c0530bc9279b14134210befc5c9\output\jars\classes.jar"
         jumboMode="false"
@@ -25,7 +34,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="f54d31a11ffdec77b150892ad5fddf8afaecd2e8">
+        sha1="31c1d9fd5bcc13c034a1fc8b2534899061170a5d">
         <dex dex="G:\AS\sjTest\Android-AlarmManagerClock\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_480abe3120df632eebefbfc6e853230c57df679a\classes.dex" />
     </item>
     <item
@@ -63,6 +72,15 @@
         revision="25.0.0"
         sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
         <dex dex="G:\AS\sjTest\Android-AlarmManagerClock\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_58fac645efb2b8dff0f0381b6e83e20a43e1bb86.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\A\.android\build-cache\907e9025dd75fff0d5c8ace12f161a9aa984e623\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8718be9491bf14e701e7c88bf6f4e30e5eb594e5">
+        <dex dex="G:\AS\sjTest\Android-AlarmManagerClock\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9c6c4add61ca7ae98c28c22a4e3a3f70c2ed24d9\classes.dex" />
     </item>
     <item
         is-multidex="false"

@@ -1,5 +1,6 @@
 package com.loonggg.alarmmanager.clock;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,8 @@ import com.loonggg.lib.alarmmanager.clock.AlarmManagerUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import Model.Times;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView date_tv;   //显示选择的时间
@@ -104,7 +107,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .parseInt(times[1]), i, Integer.parseInt(weeks[i]), "闹钟响了", ring);
                 }
             }
-            Toast.makeText(this, "闹钟设置成功", Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "闹钟设置成功", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, Main2Activity.class);
+            startActivity(intent);
+            Times time1=new Times();
+            time1.setTime(time);
+            time1.setDate((String)tv_repeat_value.getText());
+            if (time1.save()) {
+                Toast.makeText(this, "闹钟设置成功", Toast.LENGTH_LONG).show();
+                intent.setClass(MainActivity.this, Main2Activity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "闹钟设置失败", Toast.LENGTH_LONG).show();
+            }
         }
 
     }

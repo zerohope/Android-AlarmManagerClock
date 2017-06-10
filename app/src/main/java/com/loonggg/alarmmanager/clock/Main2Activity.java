@@ -10,18 +10,20 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.litepal.crud.DataSupport;
+
 import Model.Times;
 
 public class Main2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextView textview=(TextView)findViewById(R.id.mess);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        TextView textview=(TextView)findViewById(R.id.mess);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,14 +38,11 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-       Times time=new Times();
-
-        time.find(Times.class,0);
-        Toast.makeText(this, "闹钟设置成功"+time.getTime(), Toast.LENGTH_LONG).show();
-       // if(time.getTime().equals("")){
-         // textview.setText("1111");
-      //  }
-
+       Times time= DataSupport.findLast(Times.class);
+        if(time!=null) {
+           textview.setText(time.getDate());
+         DataSupport.deleteAll(Times.class);
+        }
 
 
     }

@@ -15,6 +15,8 @@ import com.loonggg.alarmmanager.clock.view.SelectRemindCyclePopup;
 import com.loonggg.alarmmanager.clock.view.SelectRemindWayPopup;
 import com.loonggg.lib.alarmmanager.clock.AlarmManagerUtil;
 
+import org.litepal.crud.DataSupport;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -112,8 +114,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.setClass(MainActivity.this, Main2Activity.class);
             startActivity(intent);
             Times time1=new Times();
+
             time1.setTime(time);
             time1.setDate((String)tv_repeat_value.getText());
+
             if (time1.save()) {
                 Toast.makeText(this, "闹钟设置成功", Toast.LENGTH_LONG).show();
                 intent.setClass(MainActivity.this, Main2Activity.class);

@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.0'
 
     defaultConfig {
-        applicationId "com.loonggg.alarmmanager.clock"
+        applicationId "cn.studyjams.s2.sj0121.alarmzero"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -28,3 +28,4 @@ dependencies {
     compile 'org.litepal.android:core:1.5.0'
     testCompile 'junit:junit:4.12'
 }
+apply plugin: 'com.google.gms.google-services'

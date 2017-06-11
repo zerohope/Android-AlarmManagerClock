@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "577874508084",
+    "firebase_url": "https://alarmclock-5e358.firebaseio.com",
+    "project_id": "alarmclock-5e358",
+    "storage_bucket": "alarmclock-5e358.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577874508084:android:f66c0541395ce8ef",
+        "android_client_info": {
+          "package_name": "cn.studyjams.s2.sj0121.alarmzero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577874508084-eli9q7q3aeb52116e3b8lnjnhpggvo6s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cn.studyjams.s2.sj0121.alarmzero",
+            "certificate_hash": "faab093afd57f9d06f900e1b94a394d4138aeb52"
+          }
+        },
+        {
+          "client_id": "577874508084-g77mefhgpj0tbs00r0tgbmh11fqjqqkc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD1qE0EloKUZLotj51y9fpkUwn_TK43lk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577874508084-g77mefhgpj0tbs00r0tgbmh11fqjqqkc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
